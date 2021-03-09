@@ -1,3 +1,25 @@
+# A fixed version of PWA demo
+
+- use Chrome debug tools / Manifest to fix all errors and warnings. (icons are critical for it to be installable)
+
+# put to https for testing
+*** without https, localhost can also correctly prmopt 'Installation' for PWA.***
+
+using ngrok to map it to real https for testing.
+- run 
+```
+python3 -m http.server 8081
+```
+- make sure ngrok is authenticated. run 
+```
+ngrok http 8081
+```
+Now ngrok will expose it to https on public ip:
+> Forwarding  https://d6763365df29.ngrok.io -> http://localhost:8081  
+```
+- test https://*.ngrok.io/sw-test to see if it is installable (showed up installation option in chrome menu)
+- To change and retest, go to chrome dev tool to delete cache: Cache/ Cache Storage / cache_url
+
 # sw-test
 
 Service Worker test repository. This is a very simple demo to show basic service worker features in action. The demo can be seen on [our GitHub pages](https://mdn.github.io/sw-test/).
